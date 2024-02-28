@@ -1,16 +1,53 @@
 
-<div class="bg">
+
+<div id="bg">
 <img src="/public/Background-picture.jpg" alt="" width="100%">
-<h1>About</h1>
-<hr>
-<p>Hi i'm Line 
+<h1  class="hidden">About</h1>
+<hr  class="hidden">
+<p  class="hidden">Hi i'm Line 
     <br>
     <br>
     Tekst her</p>
-</div>
+</div> 
+
+
+
+<script>
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+            console.log(entry)
+            if(entry.isIntersecting) {
+                entry.target.classList.add('show');
+            } else {
+                entry.target.classList.remove('show');
+            }
+        });
+    });
+
+    const hiddenElements = document.querySelectorAll(".hidden");
+    hiddenElements.forEach((el) => observer.observe(el));
+</script>
+
 
 <style>
-.bg{
+
+
+.hidden{
+        opacity: 0;
+        transition: ease 1.5s;
+        transform: translateX(-100%);
+        filter: blur(5px);
+    }
+
+
+    .show{
+        opacity: 1;
+        filter: blur(0);
+        transform: translateX(0);
+    }
+
+
+#bg{
     position: relative;
 }
 
@@ -41,4 +78,4 @@ p{
     left: 13.8em;
     font-size: 20px;
 }
-</style>
+</style> 

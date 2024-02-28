@@ -1,8 +1,108 @@
 
+<section id="cold-box-border" class="hidden">
+    <h3 class="hidden">Line Lochmann Møller</h3>
+</section>
+
+<section id="cold-box-border" class="hidden">
+    <h1 class="hidden">Frontend- Designer & Developer</h1>
+</section>
+
+<section id="cold-box-border" class="hidden">
+    <p class="hidden">Download CV</p>
+</section>
+
+   
+
+
+<script>
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+            console.log(entry)
+            if(entry.isIntersecting) {
+                entry.target.classList.add('show');
+            } else {
+                entry.target.classList.remove('show');
+            }
+        });
+    });
+
+    const hiddenElements = document.querySelectorAll(".hidden");
+    hiddenElements.forEach((el) => observer.observe(el));
+</script>
+
+
+
+
+<style>
+
+    .hidden{
+        opacity: 0;
+        transition: ease 1.5s;
+        transform: translateX(-100%);
+        filter: blur(5px);
+    }
+
+
+    .show{
+        opacity: 1;
+        filter: blur(0);
+        transform: translateX(0);
+    }
+
+
+    body{
+        background-color: black;
+    }
+
+
+    h1{
+        color: #FFD4B5; 
+        font-size: 75px;
+        margin-top: -0.4em;
+    }
+
+    h3{
+        color: #FFD4B5;
+        margin-top: 9em;
+        font-size: 30px;
+    }
+
+    p{
+        font-size: 17px;
+        border-style: solid;
+        padding: 13px;
+        width: 9em;
+        border-radius: 15px;
+        color: #FFD4B5;
+        margin-bottom: 20em;
+        text-align: center;
+    }
+
+    #cold-box-border{
+        margin-left: 5em;
+    }
+        
+</style>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- 
 
 <section class="cold-box-border">
-    <h1>Line Lochmann Møller</h1>
-    <h2>Frontend- Designer & Developer</h2>
+    <h3>Line Lochmann Møller</h3>
+    <h1>Frontend- Designer & Developer</h1>
     <p>Download CV</p>
 </section>
 
@@ -12,8 +112,36 @@
     body{
         background-color: black;
     }
-            
+
+
     h1{
+        color: #FFD4B5; 
+        font-size: 75px;
+        margin-top: -0.4em;
+    }
+
+    h3{
+        color: #FFD4B5;
+        margin-top: 9em;
+        font-size: 30px;
+    }
+
+    p{
+        font-size: 17px;
+        border-style: solid;
+        padding: 13px;
+        width: 9em;
+        border-radius: 15px;
+        color: #FFD4B5;
+        margin-bottom: 20em;
+        text-align: center;
+    }
+
+    .cold-box-border{
+        margin-left: 5em;
+    }
+            
+    /* h1{
         color: #FFD4B5;
         font-size: 75px;
         margin-bottom: 0;
@@ -32,9 +160,9 @@
         color: #FFD4B5;
         margin: auto;
     }
-    
+     */
             
-    .cold-box-border{
+    /* .cold-box-border{
         display: grid;
         text-align: center;
         border-style: groove;
@@ -44,9 +172,9 @@
         margin: auto;
         margin-top: 11em;	
         margin-bottom: 20em;
-        border-radius: 8px;
-    }
+        border-radius: 8    px;
+    } */
     
     
     </style>
-    
+     -->
