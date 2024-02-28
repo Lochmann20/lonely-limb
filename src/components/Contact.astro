@@ -1,16 +1,16 @@
 
-<div class="bg">
+<div id="bg">
 <h1>Contact</h1>
 
-<div class="contact-formular">
+<div id="contact-formular">
     <div>
-        <h2>Phone</h2>
-        <p>+45 42 75 35 84</p>
-        <h2>Mail</h2>
-        <p>Linemoller1907@gmail.com</p>
+        <h2 class="hidden">Phone</h2>
+        <p class="hidden">+45 42 75 35 84</p>
+        <h2 class="hidden">Mail</h2>
+        <p class="hidden">Linemoller1907@gmail.com</p>
     </div>
 
-    <div class="formular">
+    <div id="formular" >
         <label for=""><input type="text" name="" id="" placeholder="Navn"></label>
         <label for=""><input type="text" name="" id="" placeholder="Efternavn"></label>
         <label for=""><input type="text" placeholder="Mail"></label>
@@ -21,9 +21,96 @@
 </div>
 
 
+
+<script>
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+            console.log(entry)
+            if(entry.isIntersecting) {
+                entry.target.classList.add('show');
+            } else {
+                entry.target.classList.remove('show');
+            }
+        });
+    });
+
+    const hiddenElements = document.querySelectorAll(".hidden");
+    hiddenElements.forEach((el) => observer.observe(el));
+</script>
+
+
 <style>
 
-.bg{
+
+.hidden{
+        opacity: 0;
+        transition: ease 1.5s;
+        transform: translateX(-50%);
+        filter: blur(5px);
+    }
+
+
+    .show{
+        opacity: 1;
+        filter: blur(0);
+        transform: translateX(0);
+    }
+
+
+    #bg{
+        background-color: #0E0D0D;
+        padding: 2em;
+        margin-top: -4px;
+    }
+    h1{
+        color: #FFD4B5;
+        font-size: 26px;
+        margin-top: 0;
+    }
+
+    p{
+        color: #FFD4B5;
+        font-size: 12px;
+    }
+
+    h2{
+        color: #FFD4B5;
+        font-size: 18px;
+    }
+
+    #contact-formular{
+        display: grid;
+    }
+
+    input{
+        padding: 10px;
+        width: 21em;
+        background-color: #242424;
+    }
+
+    #send{
+        width: 10em;
+        margin-left: 13em;
+    }
+    
+    #formular{
+        display: grid;
+        gap: 15px;
+        margin-top: 3em;
+    }
+
+
+
+
+
+
+
+
+
+
+@media screen and (min-width: 999px) {
+    
+#bg{
 background-color: #0E0D0D;
 padding: 4em;
 margin-top: -4px;
@@ -40,7 +127,7 @@ margin-top: -4px;
         color: #FFD4B5;
     }
 
-    .contact-formular{
+    #contact-formular{
         display: flex;
         justify-content: space-evenly;
     }
@@ -56,8 +143,10 @@ margin-top: -4px;
         margin-left: 22em;
     }
     
-    .formular{
+    #formular{
         display: grid;
         gap: 15px;
-    }
+    } 
+
+}
 </style>

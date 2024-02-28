@@ -1,7 +1,7 @@
 <div class="bg">
 <h1>SoMe</h1>
 
-<div class="SoMe">
+<div id="SoMe" class="hidden">
     <a href="#">FB</a>
     <a href="#">IG</a>
     <a href="#">IN</a>
@@ -9,8 +9,74 @@
 </div>
 
 
+<script>
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+            console.log(entry)
+            if(entry.isIntersecting) {
+                entry.target.classList.add('show');
+            } else {
+                entry.target.classList.remove('show');
+            }
+        });
+    });
+
+    const hiddenElements = document.querySelectorAll(".hidden");
+    hiddenElements.forEach((el) => observer.observe(el));
+</script>
+
+
 <style>
+        .hidden{
+        opacity: 0;
+        transition: ease 1.5s;
+        transform: translateY(100%);
+        filter: blur(5px);
+    }
+
+
+    .show{
+        opacity: 1;
+        filter: blur(0);
+        transform: translateY(0);
+    }
+
     .bg{
+        padding: 2em;
+    }
+
+    h1{
+        color: #FFD4B5;
+        font-size: 26px;
+        margin-top: 0;
+        text-align: center;
+    }
+
+    a{
+        text-decoration: none;
+        color: white;
+        margin: auto;
+        font-size: 12px;
+        background-color: #1D1D1D;
+        padding: 6px;
+        border-style: solid;
+        border-color: #FFD4B5;
+        border-radius: 6px;
+    }
+    
+    #SoMe{
+        display: flex;
+        width: 12em;
+        margin: auto;
+    }
+
+
+
+
+
+@media screen and (min-width: 999px) {
+    
+.bg{
         padding: 4em;
     }
 
@@ -31,9 +97,11 @@
         border-radius: 6px;
     }
     
-    .SoMe{
+    #SoMe{
         display: flex;
         width: 12em;
         margin: auto;
-    }
+    } 
+}
+
 </style>
