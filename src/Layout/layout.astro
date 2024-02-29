@@ -5,23 +5,35 @@ import Experience from "../components/Experience.astro";
 import About from "../components/About.astro";
 import Contact from "../components/Contact.astro";
 import SoMe from "../components/SoMe.astro";
+
+
+
 ---
 
-<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
 
-    <Nav />
-    <Forside />
-    <Experience />
-    <About />
-    <Contact />
-    <SoMe />
+    <header>
+        <Nav />
+    </header>
+        
+    <main>
+        <Forside />
+        <Experience />
+        <About />
+        <!-- <Contact />-->
+    </main>
+     
+    <!-- 
+    <footer>
+        <SoMe />
+    </footer> -->
     
 </body>
 </html>

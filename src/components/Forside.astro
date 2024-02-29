@@ -12,7 +12,6 @@
 </div>
 
 
-
    
 
 
@@ -31,12 +30,29 @@
     const hiddenElements = document.querySelectorAll(".hidden");
     hiddenElements.forEach((el) => observer.observe(el));
 
-</script>
+</script>   
 
 
 
 
 <style>
+    body{
+        background: url(bg-light.png);
+        background-repeat: no-repeat;
+        background-size: 100%;
+        backdrop-filter: brightness(30%);
+        margin: 0;
+
+         /* Create the parallax scrolling effect */
+        background-attachment: fixed;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+    }
+
+
+
+
 
     .hidden{
         opacity: 0;
@@ -52,9 +68,12 @@
         transform: translateY(0);
     }
 
-    body{
-        background-color: black;
-    }
+
+
+
+
+
+
 
     h1{
         color: #FFD4B5; 
@@ -83,17 +102,15 @@
 
     #cold-box-border{
         text-align: center;
-        
     }
 
+
+
         
 
 
 
 
-
-
-    
     @media screen and (min-width: 1000px) {
             
     h1{
@@ -121,6 +138,5 @@
         margin-bottom: 15em;
     }
 }
-
 </style>
     
