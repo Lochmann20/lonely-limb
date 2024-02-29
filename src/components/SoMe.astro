@@ -2,9 +2,12 @@
 <h1>SoMe</h1>
 
 <div id="SoMe" class="hidden">
-    <a href="#">FB</a>
-    <a href="#">IG</a>
-    <a href="#">IN</a>
+    <a href="#">
+        <p>FB</p></a>
+    <a href="#">
+        <p>IG</p></a>
+    <a href="#">
+        <p>IN</p></a>
 </div>
 </div>
 
@@ -43,6 +46,7 @@
 
     .bg{
         padding: 2em;
+        background-color: black;
     }
 
     h1{
@@ -70,6 +74,10 @@
         margin: auto;
     }
 
+    p{
+        margin: 0;
+        rotate: -45deg;
+    }
 
 
 
@@ -95,11 +103,15 @@
         border-style: solid;
         border-color: #FFD4B5;
         border-radius: 6px;
+        rotate: 45deg;
     }
     
+    p{
+        margin: 0;
+    }
     #SoMe{
         display: flex;
-        width: 12em;
+        width: 15em;
         margin: auto;
     } 
 }
